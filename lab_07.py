@@ -1,4 +1,4 @@
-alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ '
+alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ '
 alpha_len = len(alphabet)
 
 def pretty_print(vsq:list):
@@ -81,21 +81,26 @@ def decrypt_vigenere(key:str, cipher_text:str, alphabet:str)-> str:
 #print(letter_to_index('Z', alphabet))
 #print(index_to_letter(3, alphabet))
 #print(vigenere_index('D', 'T', alphabet))
-key = 'DAVINCI'
-plaintext = 'THE EAGLE HAS LANDED'
+key = 'hi'
 #et = encrypt_vigenere(key, plaintext, alphabet)
 #pt = decrypt_vigenere(key, et, alphabet)
 #print(et,pt)
 choice = 0
+et_lst = []
 while choice != 4:
-    choice = int(input("Enter your choice [1,2,3]:"))
+    choice = int(input("Enter your choice [1,2,3,4]:"))
     if not (1 <= choice <=3):
         continue
-    print("preforming")
     if choice == 1:
         message = input("What is your message?: ")
-        print(encrypt_vigenere(key, message, alphabet))
+        et_lst.append(encrypt_vigenere(key, message, alphabet))
+        print(et_lst)
     elif choice == 2:
-        message = input("Enter cipher text: ")
-        for ct in et_lst
+        for ct in et_lst:
+            print(decrypt_vigenere(key, ct, alphabet))
+    elif choice == 3:
+        for ct in et_lst:
+            print(f"Here they are:",ct)
+    print("Performing...")
+
 
